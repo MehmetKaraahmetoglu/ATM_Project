@@ -4,7 +4,7 @@ public class ATM_Project {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        int bakiye = 50;
+        int balance = 50;
 
 
         while (true) {
@@ -16,34 +16,34 @@ public class ATM_Project {
             System.out.println("4 - Exit");
             System.out.println("Please make your choice...");
 
-            int secim = scanner.nextInt();
+            int chosen = scanner.nextInt();
 
-            switch (secim) {
+            switch (chosen) {
                 case 1:
-                    System.out.println("You have in your account " + bakiye + "$");
+                    System.out.println("You have in your account " + balance + "$");
                     break;
                 case 2:
                     System.out.println("Enter the amount you wish to deposit into your account.");
-                    int yatirilanPara = scanner.nextInt();
-                    System.out.println("You have in your account: " + (bakiye + yatirilanPara) + "$");
+                    int depositedMoney = scanner.nextInt();
+                    System.out.println("You have in your account: " + (balance + depositedMoney) + "$");
                     System.out.println("");
-                    bakiye += yatirilanPara;
+                    balance += depositedMoney;
                     break;
                 case 3:
                     System.out.println("Please enter the amount of money you want to withdraw: ");
 
-                    int istenenPara = 0;
-                    istenenPara = scanner.nextInt();
+                    int moneyToWithdraw = 0;
+                    moneyToWithdraw = scanner.nextInt();
 
-                    while (istenenPara > bakiye) {
+                    while (moneyToWithdraw > balance) {
                         System.out.println("Insufficient balance! Please try again.");
-                        istenenPara = scanner.nextInt();
+                        moneyToWithdraw = scanner.nextInt();
 
 
                     }
 
-                    System.out.println("You have in your account: " + (bakiye - istenenPara) + "$");
-                    bakiye = bakiye - istenenPara;
+                    System.out.println("You have in your account: " + (balance - moneyToWithdraw) + "$");
+                    balance = balance - moneyToWithdraw;
 
 
                     System.out.println("");
